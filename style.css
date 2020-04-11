@@ -1,0 +1,87 @@
+*{
+    /*border: solid 1px tomato;*/
+    box-sizing:border-box;
+    color:#E8EBF5;
+}
+
+/*initial*/
+html, body{height:100%; margin:0; padding:0;}
+body{background-image:url('img_background.png'); background-repeat:no-repeat; background-size: cover;}
+a{text-decoration: none;}
+ul,li{list-style: none; padding:0; margin-top: 20px;}
+
+/*menuBtn design*/
+/*hidden menu*/
+.hide{display:none;}
+.open.showMenu, .open.hiddenMenu{background: linear-gradient(slategray, #131522); }
+/*hamburger menu*/
+.menuBtn{
+    background-color: none;
+    width:30px; height:30px; margin-top:10px;
+    position: relative; right:-10px;
+    cursor:pointer;
+}
+.menuBtn > span{
+    width:100%; height:3px; background-color: #E8EBF5;
+    position:absolute; top:50%; left:0;
+    transform:translate(0,-50%);
+    transition: transform 0.3s ease-out;
+}
+.menuBtn > span:before, span:after{
+    content:'';
+    width:100%; height:3px; background-color: #E8EBF5;
+    position:absolute; left:0;
+    transition: transform 0.3s ease-out;
+}
+.menuBtn > span:before{top:-10px;}
+.menuBtn > span:after{ top:10px;}
+/*open menu - menuBtn change*/
+.open .menuBtn>span:before{
+    top:0;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-out;
+}
+.open .menuBtn > span{
+    background: none;
+    transition: all 0.3s ease-out;
+    transform-origin: 0 50%;
+}
+.open .menuBtn>span:after{
+    top:0;
+    transform:rotate(-45deg);
+    transition: transform 0.3s ease-out;
+}
+
+/*menu mouseover*/
+a:hover{
+    color:#131522
+}
+/*layout*/
+body{display: flex;}
+header{display: flex;}
+main{display:flex; flex-direction: column; height:100%;}
+footer{position:absolute; left:50%; bottom: 0;}
+nav{
+    height:100%;
+}
+
+/*navigation layout*/
+.showMenu{
+    width:50px; text-align: center;
+}
+
+.hiddenMenu{
+    width:200px; padding-left:20px; padding-top:40px;
+}
+
+/*home main content*/
+.homeContent{
+    width:100%;
+}
+
+.logoImg{
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
